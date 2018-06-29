@@ -13,16 +13,20 @@
     "ora": "^1.1.0",
     "parse-github-repo-url": "^1.4.0",
     "semver": "^5.3.0",
-    "travis-ci": "^2.1.1"
+    "travis-ci": "^2.1.1",
+    "snyk": "^1.87.0"
   },
   "devDependencies": {
     "prettier-standard-formatter": "^0.222222222222222.333333333333333",
     "tap": "^10.3.0"
   },
   "scripts": {
-    "test": "prettier-standard-formatter *.js test/*.js && tap test/*.js"
+    "test": "prettier-standard-formatter *.js test/*.js && tap test/*.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "bin": {
     "travis-watch": "index.js"
-  }
+  },
+  "snyk": true
 }
